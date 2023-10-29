@@ -20,6 +20,13 @@ return new class extends Migration
             $table->string('image_path_ky')->nullable();
             $table->string('image_path_tr')->nullable();
             $table->timestamps();
+
+            $table->unsignedBigInteger('subcategory_id');
+            $table->index('subcategory_id', 'image_subcategory_idx');
+            $table->foreign('subcategory_id', 'image_subcategory_fk')
+                ->on('subcategories')
+                ->references('id')
+                ->cascadeOnDelete();
         });
     }
 

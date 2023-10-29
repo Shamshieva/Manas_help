@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'admin'], function (){
+    Route::get('/', [IndexController::class, 'index']);
+
+
+    Route::group(['prefix' => 'category'], function (){
+        Route::get('/', [CategoryController::class, 'index'])->name('admin.category.index');
+    });
 });
