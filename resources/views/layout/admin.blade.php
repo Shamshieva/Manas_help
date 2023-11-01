@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,11 +6,20 @@
     <title>Datum | CRM Admin Dashboard Template</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('admin_files/assets/images/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('admin_files/assets/images/favicon.ico')}}"/>
 
     <link rel="stylesheet" href="{{asset('admin_files/assets/css/backend-plugin.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin_files/assets/css/backend.css?v=1.0.0')}}">  </head>
+    <link rel="stylesheet" href="{{asset('admin_files/assets/css/backend.css?v=1.0.0')}}">
+</head>
 <body class="  ">
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+<script>    tinymce.init({
+        selector: 'textarea',  // Задайте селектор для элемента, в котором вы хотите использовать редактор        plugins: 'autolink lists link image charmap print preview',
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    });
+</script>
+
 <style>
     .icon-container {
         white-space: nowrap; /* Запрещаем перенос элементов на новую строку */
@@ -38,6 +46,26 @@
     @include('includes.navbar')
     <div class="content-page">
         <div class="container-fluid">
+
+            @if(session('notification'))
+                <div class="toast fade show bg-success text-white border-0 rounded p-2 mt-3" role="alert"
+                     aria-live="assertive" aria-atomic="true" id="notification_id">
+                    <div class="toast-header bg-success text-white">
+                        <svg class="bd-placeholder-img rounded mr-2" width="20" height="20"
+                             xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                             role="img">
+                            <rect width="100%" height="100%" fill="#fff"></rect>
+                        </svg>
+                        <strong class="mr-auto text-white">Notification</strong>
+                        <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast"
+                                aria-label="Close"><span aria-hidden="true" onclick="close_notification()">×</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        {{session('notification')}}
+                    </div>
+                </div>
+            @endif
             @yield('content')
         </div>
     </div>
@@ -94,5 +122,12 @@
 
 
 <!-- app JavaScript -->
-<script src="{{asset('admin_files/assets/js/app.js')}}"></script>  </body>
+<script src="{{asset('admin_files/assets/js/app.js')}}"></script>
+<script>
+    function close_notification()
+    {
+        document.getElementById('notification_id').outerHTML = '';
+    }
+</script>
+</body>
 </html>
