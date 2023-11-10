@@ -33,7 +33,6 @@
                                 <label for="title_tr">Title_tr</label>
                                 <input type="text" class="form-control" id="title_tr" name="title_tr" required="">
                             </div>
-
                         </div>
                         <div class="form-row">
 
@@ -56,7 +55,8 @@
                             @enderror
                         </div>
                         <div class="form-group mb-0">
-                            <button class="btn btn-primary" type="submit">Submit form</button>
+                            <button class="btn btn-primary" type="submit">Create</button>
+                            <a href="{{ route('admin.category.index') }}">Back</a>
                         </div>
                     </form>
                 </div>

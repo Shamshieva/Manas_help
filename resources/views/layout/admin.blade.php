@@ -120,7 +120,6 @@
 <!-- Emoji picker -->
 <script src="{{asset('admin_files/assets/vendor/emoji-picker-element/index.js')}}" type="module"></script>
 
-
 <!-- app JavaScript -->
 <script src="{{asset('admin_files/assets/js/app.js')}}"></script>
 <script>

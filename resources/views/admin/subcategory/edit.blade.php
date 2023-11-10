@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class="collapse" id="form-validation-1"></div>
 
-                    <form action="{{ route('admin.category.update', $category->id) }}" method="post"
+                    <form action="{{ route('admin.subcategory.update', $subcategory->id) }}" method="post"
                           enctype="multipart/form-data">
                         @csrf
                         @method('patch')
@@ -28,43 +28,53 @@
                             <div class="col-md-6 mb-3">
                                 <label for="title_ky">Title_ky</label>
                                 <input type="text" class="form-control" id="title_ky" name="title_ky" required=""
-                                       value="{{ $category->title_ky }}">
+                                       value="{{ $subcategory->title_ky }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="title_tr">Title_tr</label>
                                 <input type="text" class="form-control" id="title_tr" name="title_tr" required=""
-                                       value="{{ $category->title_tr }}">
+                                       value="{{ $subcategory->title_tr }}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <label for="description_ky">Description_ky</label>
                                 <textarea id="description_ky"
-                                          name="description_ky"> {{ $category->description_ky }}</textarea>
+                                          name="description_ky"> {{ $subcategory->description_ky }}</textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="description_tr">Description_tr</label>
                                 <textarea id="description_tr"
-                                          name="description_tr"> {{ $category->description_tr }}</textarea>
+                                          name="description_tr"> {{ $subcategory->description_tr }}</textarea>
                             </div>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <div class="mb-4 mt-4">
-                                <img style="width: 250px; height: 250px;" src="{{asset($category->logo)}}">
+                                <img style="width: 250px; height: 250px;" src="{{asset($subcategory->logo)}}">
                             </div>
                             <div class="custom-file mb-3">
                                 <input type="file" class="custom-file-input" id="logo" name="logo"
-                                       value="{{ $category->logo }}">
+                                       value="{{ $subcategory->logo }}">
                                 <label class="custom-file-label" for="logo">logo</label>
                             </div>
                             @error('logo')
                             <p class="text-danger">{{$message}}</p>
                             @enderror
                         </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="category_id">Category</label>
+                                <select id="category_id" name="category_id" class="form-control">
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ $subcategory->category_id == $category->id ? 'selected' : '' }}>{{$category->title_ky}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group mb-0">
                             <button class="btn btn-primary" type="submit">Update</button>
-                                <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Back</a>
+                                <a href="{{ route('admin.subcategory.index') }}" class="btn btn-primary">Back</a>
                         </div>
                     </form>
                 </div>

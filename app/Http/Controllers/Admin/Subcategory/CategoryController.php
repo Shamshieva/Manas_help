@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\Subcategory;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreRequest;
 use App\Http\Requests\Admin\Category\UpdateRequest;
 use App\Http\Services\Admin\CategoryService;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -15,13 +14,11 @@ class CategoryController extends Controller
 
     public function __construct(CategoryService $categoryService)
     {
-
         $this->categoryService = $categoryService;
     }
 
     public function index()
     {
-
         $categories = Category::all();
         return view('admin.category.index', compact('categories'));
     }
