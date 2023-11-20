@@ -49,4 +49,9 @@ class SubcategoryController extends Controller
         $result = $this->subcategoryService->update($subcategory, $data, $request->hasFile('logo'));
         return redirect()->route('admin.subcategory.index')->with(['notification'=> $result['notification']]);
     }
+
+    public function show(Subcategory $subcategory)
+    {
+        return view('admin.subcategory.show', compact('subcategory'));
+    }
 }
