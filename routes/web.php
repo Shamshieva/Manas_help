@@ -48,6 +48,7 @@ Route::group(['prefix' => ''], function () {
 
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
 
+        Route::post('/' , [SubcategoryController::class , 'index'])-> name('admin.subcategory.index ');
     });
 });
 
