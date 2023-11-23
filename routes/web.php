@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\Subcategory\CategoryController;
 use App\Http\Controllers\Admin\Subcategory\SubcategoryController;
+use App\Http\Controllers\Admin\Subcategory\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,6 +50,15 @@ Route::group(['prefix' => ''], function () {
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
 
         Route::post('/' , [SubcategoryController::class , 'index'])-> name('admin.subcategory.index ');
+
+    });
+
+
+    Route::group(['prefix' => 'video'], function () {
+        Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
+        Route::post('/', [VideoController::class, 'index'])->name('admin.video.index');
+
+
     });
 });
 
