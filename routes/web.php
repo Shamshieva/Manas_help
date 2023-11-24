@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\Category\ShowController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\IndexController;
-use App\Http\Controllers\Admin\Subcategory\CategoryController;
-use App\Http\Controllers\Admin\Subcategory\SubcategoryController;
 use App\Http\Controllers\Admin\Subcategory\VideoController;
+use App\Http\Controllers\Admin\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/register', [AuthController::class, 'registrationForm'])->name('auth.registration');
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
 
-Route::group(['prefix' => ''], function () {
+Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
+Route::post('/login',  [AuthController::class, 'login'])->name('auth.login');
+
+Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
     Route::get('/', [IndexController::class, 'index']);
 
     Route::group(['prefix' => 'category'], function () {
