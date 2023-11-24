@@ -21,6 +21,7 @@
 </script>
 
 <style>
+
     .icon-container {
         white-space: nowrap; /* Запрещаем перенос элементов на новую строку */
     }
