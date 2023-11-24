@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('admin_files/assets/css/backend.css?v=1.0.0')}}">  </head>
 <body class="  ">
 <style>
+
     .icon-container {
         white-space: nowrap; /* Запрещаем перенос элементов на новую строку */
     }
