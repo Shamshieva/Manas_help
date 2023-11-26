@@ -3,8 +3,9 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\IndexController;
-use App\Http\Controllers\Admin\Subcategory\VideoController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\Admin\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,10 @@ Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login',  [AuthController::class, 'login'])->name('auth.login');
 
 Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
-    Route::get('/', [IndexController::class, 'index']);
+    Route::get('/', [IndexController::class, 'index'])->name('admin.index');
+
+    Route::get('/profile', [ProfileController::class, 'show'])->name('admin.profile.show');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('admin.profile.edit');
 
     Route::group(['prefix' => 'category'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('admin.category.index');
@@ -50,9 +54,6 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::patch('/{subcategory}', [SubcategoryController::class, 'update'])->name('admin.subcategory.update');
 
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
-
-        Route::post('/' , [SubcategoryController::class , 'index'])-> name('admin.subcategory.index ');
-
     });
 
 
