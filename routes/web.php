@@ -3,8 +3,10 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\IndexController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
+
 use App\Http\Controllers\Admin\VerificationController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Mail\TestMail;
@@ -57,7 +59,12 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::get('/{subcategory}/edit', [SubcategoryController::class, 'edit'])->name('admin.subcategory.edit');
         Route::patch('/{subcategory}', [SubcategoryController::class, 'update'])->name('admin.subcategory.update');
 
+
+        Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show');
+
+
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
+
     });
 
 
