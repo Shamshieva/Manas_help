@@ -129,11 +129,27 @@
                     <div class="collapse" id="form-file-uploader-1">
 
                     </div>
-                    <form action="/action_page.php">
-                        <p>Custom file:</p>
+
+                    <form action="{{route('admin.subcategory.store.video',$subcategory->id)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="title_ky">Title KG</label>
+                            <input name="title_ky" id="title_ky" class="form-control">
+                        </div>
+                        <p>Custom Kg file:</p>
                         <div class="custom-file mb-3">
-                            <input type="file" class="custom-file-input" id="customFile" name="filename">
-                            <label class="custom-file-label" for="customFile">Choose file</label>
+                            <input type="file" class="custom-file-input" id="customFile" name="video_ky">
+                            <label class="custom-file-label" for="customFile">Файл тандаңыз </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="title_tr">Title TR</label>
+                            <input name="title_tr" id="title_tr" class="form-control">
+                        </div>
+
+                        <p>Custom Tr file:</p>
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" id="customFile" name="video_tr">
+                            <label class="custom-file-label" for="customFile">File Seçiniz </label>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
