@@ -10,16 +10,6 @@ use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\VerificationController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/register', [AuthController::class, 'registrationForm'])->name('auth.registration');
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
@@ -63,11 +53,9 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
 
     });
 
-
     Route::group(['prefix' => 'video'], function () {
         Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
         Route::post('/', [VideoController::class, 'index'])->name('admin.video.index');
-
 
     });
 });

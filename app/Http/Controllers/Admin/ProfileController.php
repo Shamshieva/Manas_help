@@ -3,16 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
     public function show()
     {
-        return view('admin.profile.show');
+        $user = Auth::user();
+        return view('admin.profile.show', compact('user'));
     }
     public function edit()
     {
-        return view('admin.profile.edit');
+        $user = Auth::user();
+        return view('admin.profile.edit', compact('user'));
     }
+
+
 }
