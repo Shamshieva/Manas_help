@@ -8,7 +8,6 @@ use App\Http\Requests\Admin\Subcategory\UpdateRequest;
 use App\Http\Services\Admin\SubcategoryService;
 use App\Models\Category;
 use App\Models\Subcategory;
-use Illuminate\Http\Request;
 
 
 class SubcategoryController extends Controller
@@ -57,7 +56,4 @@ class SubcategoryController extends Controller
         return view('admin.subcategory.show', compact('subcategory'));
     }
 
-    public function storeVideo(Request $request , Subcategory $subcategory){
-        dd($request);
-    }
 }

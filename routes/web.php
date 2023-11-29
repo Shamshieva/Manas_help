@@ -46,18 +46,19 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::patch('/{subcategory}', [SubcategoryController::class, 'update'])->name('admin.subcategory.update');
 
 
-        Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show');
-
-
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
+
 
     });
 
     Route::group(['prefix' => 'video'], function () {
         Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
         Route::post('/', [VideoController::class, 'index'])->name('admin.video.index');
+//        Route::post('/storeVideo/{subcategory}', [VideoController::class, 'storeVideo'])->name('admin.subcategory.store.video') ;
+        Route::post('/', [VideoController::class, 'storeVideo'])->name('admin.video.store') ;
 
     });
+
 });
 
 Route::get('/email', [VerificationController::class, 'sendVerificationEmail']);
