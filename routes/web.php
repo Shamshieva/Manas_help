@@ -8,10 +8,6 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
 
 use App\Http\Controllers\Admin\VerificationController;
-use App\Http\Controllers\Admin\VideoController;
-use App\Mail\TestMail;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,14 +57,14 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
 
 
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
-
+        Route::post('/store/video/{subcategory}', [SubcategoryController::class, 'storeVideo'])->name('admin.subcategory.store.video');
 
     });
 
 
     Route::group(['prefix' => 'video'], function () {
         Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
-//        Route::post('/storeVideo/{subcategory}', [VideoController::class, 'storeVideo'])->name('admin.subcategory.store.video') ;
+
         Route::post('/', [VideoController::class, 'storeVideo'])->name('admin.video.store') ;
 
     });
@@ -76,11 +72,3 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
 });
 
 Route::get('/email', [VerificationController::class, 'sendVerificationEmail']);
-//Route::get('/email', function (){
-//    Mail::to('burulaiurbaeva13@gmail.com')->send(new TestMail());
-//});
-
-//Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-//    Route::post('/send-verification-email', [VerificationController::class, 'sendVerificationEmail']);
-//    Route::get('/verify-email/{token}', [VerificationController::class, 'verifyEmail']);
-//});
