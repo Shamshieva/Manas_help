@@ -77,27 +77,27 @@
                                     <button type="submit" class="btn btn-primary">Submit</button>
 
 
-                                    <div id="carouselExample" class="carousel slide">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="..." class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="..." class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="..." class="d-block w-100" alt="...">
-                                            </div>
-                                        </div>
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
-                                    </div>
+{{--                                    <div id="carouselExample" class="carousel slide">--}}
+{{--                                        <div class="carousel-inner">--}}
+{{--                                            <div class="carousel-item active">--}}
+{{--                                                <img src="..." class="d-block w-100" alt="...">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="carousel-item">--}}
+{{--                                                <img src="..." class="d-block w-100" alt="...">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="carousel-item">--}}
+{{--                                                <img src="..." class="d-block w-100" alt="...">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">--}}
+{{--                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+{{--                                            <span class="visually-hidden">Previous</span>--}}
+{{--                                        </button>--}}
+{{--                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">--}}
+{{--                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+{{--                                            <span class="visually-hidden">Next</span>--}}
+{{--                                        </button>--}}
+{{--                                    </div>--}}
 
 
                                     <head>
@@ -109,11 +109,11 @@
                                     <body>
 
 
-
+{{--                                    @dd($videos)--}}
                                     @foreach($videos as $video)
                                             <h2>{{ $video->title }}</h2>
                                             <video width="640" height="360" controls>
-                                                <source src="{{asset($subcategory->video_path_tr)}}" type="video/mp4" >
+                                                <source src="{{asset($video->video_path_ky)}}">
                                                 Your browser does not support the video tag.
                                             </video>
                                     @endforeach

@@ -53,7 +53,13 @@ class SubcategoryService
                 unset($data['video_ky']);
             }
             $data['subcategory_id'] = $subcategory_id;
-            Video::create($data);
+            Video::create([
+                'title_ky' => $data['title_ky'],
+                'title_tr' => $data['title_tr'],
+                'video_path_ky' => $data['video_path_ky'],
+                'video_path_tr' => $data['video_path_tr'],
+                'subcategory_id' => $subcategory_id
+            ]);
             return ['notification' => 'Video created successfully.'];
         }
         catch (Exception $exception)

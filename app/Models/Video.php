@@ -12,10 +12,6 @@ class Video extends Model
     protected $table = 'videos';
 
     protected $guarded = false;
-    // Ваша модель Video (app/Models/Video.php)
-
-
-    protected $fillable = ['title', 'video_url'];
 
 
 
