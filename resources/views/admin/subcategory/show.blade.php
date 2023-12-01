@@ -17,6 +17,117 @@
                         </i>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="header-title">
+                                    <h4 class="card-title">Видео жүктөө</h4>
+                                </div>
+                                <div class="header-action">
+                                    <i data-toggle="collapse" data-target="#form-file-uploader-1" aria-expanded="false">
+                                        <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="collapse" id="form-file-uploader-1">
+
+                                </div>
+
+                                <form action="{{route('admin.subcategory.store.video',$subcategory->id)}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="title_ky">Title KG</label>
+                                        <input name="title_ky" id="title_ky" class="form-control">
+                                        @error('title_ky')
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                    </div>
+                                    <p>Custom Kg file:</p>
+                                    @csrf
+                                    <div class="custom-file mb-3">
+                                        <input type="file" class="custom-file-input" id="customFile" name="video_ky">
+                                        <label class="custom-file-label" for="customFile">Файл тандаңыз </label>
+                                        @error('video_ky')
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                    </div>
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="title_tr">Title TR</label>
+                                        <input name="title_tr" id="title_tr" class="form-control">
+                                        @error('title_tr')
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                    </div>
+
+                                    <p>Custom Tr file:</p>
+                                    @csrf
+                                    <div class="custom-file mb-3">
+                                        <input type="file" class="custom-file-input" id="customFile" name="video_tr">
+                                        <label class="custom-file-label" for="customFile">File Seçiniz </label>
+                                        @error('video_tr')
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+{{--                                    <div id="carouselExample" class="carousel slide">--}}
+{{--                                        <div class="carousel-inner">--}}
+{{--                                            <div class="carousel-item active">--}}
+{{--                                                <img src="..." class="d-block w-100" alt="...">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="carousel-item">--}}
+{{--                                                <img src="..." class="d-block w-100" alt="...">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="carousel-item">--}}
+{{--                                                <img src="..." class="d-block w-100" alt="...">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">--}}
+{{--                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+{{--                                            <span class="visually-hidden">Previous</span>--}}
+{{--                                        </button>--}}
+{{--                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">--}}
+{{--                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+{{--                                            <span class="visually-hidden">Next</span>--}}
+{{--                                        </button>--}}
+{{--                                    </div>--}}
+
+
+                                    <head>
+                                        <meta charset="UTF-8">
+                                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <title>Video Page</title>
+                                    </head>
+                                    <body>
+
+
+{{--                                    @dd($videos)--}}
+                                    @foreach($videos as $video)
+                                            <h2>{{ $video->title }}</h2>
+                                            <video width="640" height="360" controls>
+                                                <source src="{{asset($video->video_path_ky)}}">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                    @endforeach
+
+
+
+                                </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
                 <div class="card-body">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
@@ -110,56 +221,5 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between">
-                    <div class="header-title">
-                        <h4 class="card-title">Default</h4>
-                    </div>
-                    <div class="header-action">
-                        <i data-toggle="collapse" data-target="#form-file-uploader-1" aria-expanded="false">
-                            <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
-                        </i>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="collapse" id="form-file-uploader-1">
 
-                    </div>
-
-                    <form action="{{route('admin.subcategory.store.video',$subcategory->id)}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label for="title_ky">Title KG</label>
-                            <input name="title_ky" id="title_ky" class="form-control">
-                        </div>
-                        <p>Custom Kg file:</p>
-                        <div class="custom-file mb-3">
-                            <input type="file" class="custom-file-input" id="customFile" name="video_ky">
-                            <label class="custom-file-label" for="customFile">Файл тандаңыз </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="title_tr">Title TR</label>
-                            <input name="title_tr" id="title_tr" class="form-control">
-                        </div>
-
-                        <p>Custom Tr file:</p>
-                        <div class="custom-file mb-3">
-                            <input type="file" class="custom-file-input" id="customFile" name="video_tr">
-                            <label class="custom-file-label" for="customFile">File Seçiniz </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-
-                    </form>
-                </div>
-            </div>
-            </span>
-            </label>
-            </form>
-        </div>
-    </div>
 @endsection

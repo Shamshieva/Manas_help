@@ -57,14 +57,14 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
 
 
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
-
+        Route::post('/store/video/{subcategory}', [SubcategoryController::class, 'storeVideo'])->name('admin.subcategory.store.video');
 
     });
 
 
     Route::group(['prefix' => 'video'], function () {
         Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
-//        Route::post('/storeVideo/{subcategory}', [VideoController::class, 'storeVideo'])->name('admin.subcategory.store.video') ;
+
         Route::post('/', [VideoController::class, 'storeVideo'])->name('admin.video.store') ;
 
     });

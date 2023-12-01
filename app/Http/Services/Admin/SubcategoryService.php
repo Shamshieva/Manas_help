@@ -4,6 +4,7 @@ namespace App\Http\Services\Admin;
 
 use App\Http\Services\UploadService;
 use App\Models\Subcategory;
+use App\Models\Video;
 use Exception;
 class SubcategoryService
 {
@@ -38,5 +39,32 @@ class SubcategoryService
         }
     }
 
-
+    public function storeVideo(array $data, int $subcategory_id ): array
+    {
+        try {
+            if(array_key_exists('video_tr', $data))
+            {
+                $data['video_path_tr'] = $this->uploadService->upload($data['video_tr'], 'videos');
+                unset($data['video_tr']);
+            }
+            if(array_key_exists('video_ky', $data))
+            {
+                $data['video_path_ky'] = $this->uploadService->upload($data['video_ky'], 'videos');
+                unset($data['video_ky']);
+            }
+            $data['subcategory_id'] = $subcategory_id;
+            Video::create([
+                'title_ky' => $data['title_ky'],
+                'title_tr' => $data['title_tr'],
+                'video_path_ky' => $data['video_path_ky'],
+                'video_path_tr' => $data['video_path_tr'],
+                'subcategory_id' => $subcategory_id
+            ]);
+            return ['notification' => 'Video created successfully.'];
+        }
+        catch (Exception $exception)
+        {
+            return ['notification' => $exception->getMessage()];
+        }
+    }
 }
