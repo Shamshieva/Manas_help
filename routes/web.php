@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
         Route::patch('/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
 
-        Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.category.show') ;
+        Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.category.show');
     });
 
 
@@ -47,17 +47,7 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
 
 
         Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show');
-
-
-        Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
-
-    });
-
-    Route::group(['prefix' => 'video'], function () {
-        Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
-        Route::post('/', [VideoController::class, 'index'])->name('admin.video.index');
+        Route::post('/store/video/{subcategory}', [SubcategoryController::class, 'storeVideo'])->name('admin.subcategory.store.video');
 
     });
 });
-
-Route::get('/email', [VerificationController::class, 'sendVerificationEmail']);

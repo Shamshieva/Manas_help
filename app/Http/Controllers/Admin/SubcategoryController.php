@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Subcategory\StoreRequest;
+use App\Http\Requests\Admin\Subcategory\StoreVideoRequest;
 use App\Http\Requests\Admin\Subcategory\UpdateRequest;
 use App\Http\Services\Admin\SubcategoryService;
 use App\Models\Category;
 use App\Models\Subcategory;
-use Illuminate\Http\Request;
+use App\Models\Video;
+use http\Env\Request;
 
 
 class SubcategoryController extends Controller
@@ -54,10 +56,16 @@ class SubcategoryController extends Controller
 
     public function show(Subcategory $subcategory)
     {
-        return view('admin.subcategory.show', compact('subcategory'));
+      return view('admin.subcategory.show', compact('subcategory'));
     }
 
-    public function storeVideo(Request $request , Subcategory $subcategory){
-        dd($request);
+
+    public function storeVideo(StoreVideoRequest $request, Subcategory $subcategory)
+    {
+        $data = $request->validated();
+        $result = $this->subcategoryService->storeVideo($data, $subcategory->id);
+        return redirect()->back()->with(['notification' => $result['notification']]);
     }
+
+
 }
