@@ -56,8 +56,7 @@ class SubcategoryController extends Controller
 
     public function show(Subcategory $subcategory)
     {
-        $videos = Video::all();
-      return view('admin.subcategory.show', compact('subcategory', 'videos'));
+      return view('admin.subcategory.show', compact('subcategory'));
     }
 
 
