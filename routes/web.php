@@ -32,6 +32,8 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::patch('/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
 
         Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.category.show');
+        Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.category.show') ;
+        Route::post('/store/video/{category}', [CategoryController::class, 'storeVideo'])->name('admin.category.store.video');
     });
 
 
