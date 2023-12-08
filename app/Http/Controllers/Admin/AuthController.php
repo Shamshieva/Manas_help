@@ -70,4 +70,10 @@ class AuthController extends Controller
         ])->onlyInput('email');
     }
 
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/')->with('success', 'You have been logged out.');
+    }
 }
