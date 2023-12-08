@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
 
-use App\Http\Controllers\Admin\VerificationController;
 use Illuminate\Support\Facades\Route;
 
 
