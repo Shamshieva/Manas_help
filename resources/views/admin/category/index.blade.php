@@ -7,6 +7,7 @@
                     <div class="header-title">
                         <h4 class="card-title">Categories</h4>
                     </div>
+
                     <div class="header-action">
                         <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add</a>
                         <i data-toggle="collapse" data-target="#datatable-1" aria-expanded="false">
@@ -52,6 +53,7 @@
                                                     </svg>
                                                 </i>
                                             </a>
+
                                             <a href="{{ route('admin.category.edit', $category->id) }}" class="svg-icon small-icon">
                                                 <i class="">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
