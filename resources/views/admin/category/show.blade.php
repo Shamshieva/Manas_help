@@ -13,6 +13,7 @@
                                     <h5 class="mb-0 font-weight-bold">$95,595</h5>
                                     <p class="mb-0 ml-3 text-success font-weight-bold">+3.55%</p>
 
+
                                 </div>
                             </div>
                         </div>
@@ -20,9 +21,10 @@
                 </div>
                 </a>
             </div>
-
             @endforeach
         </div>
+
+
 @endsection
 
 

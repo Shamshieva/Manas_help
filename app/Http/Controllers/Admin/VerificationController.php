@@ -21,30 +21,31 @@ class VerificationController extends Controller
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
 
-        $this->redirectTo = route('verification.notice'); // Add this line
+//        $this->redirectTo = route('verification.notice');
+        $this->redirectTo = route('admin.index');
     }
+
 
     public function sendVerificationEmail()
     {
         $user = Auth::user();
 
-        if ($user->hasVerifiedEmail()) {
-            return response(['message' => 'Email already verified.'], 422);
+        try {
+            if ($user->hasVerifiedEmail()) {
+                return response(['message' => 'Email already verified.'], 422);
+            }
+
+            // Use the user's email as the sender address
+            Mail::to($user->email)
+                ->from(config('burulaiurbaeva7@gmail.com'), config('Email verification'))
+                ->send(new VerificationEmail($user));
+
+            return back()->with('message', 'Verification email sent!');
+        } catch (TransportException $e) {
+            // Log or handle the exception as needed
+            return back()->with('error', 'Error sending verification email: ' . $e->getMessage());
         }
-        Mail::to($user->email)->send(new VerificationEmail($user));
-
-        return back()->with('message', 'Verification email sent!');
     }
-
-//    public function verifyEmail($token)
-//    {
-//        $user = User::where('verification_token', $token)->first();
-//        if (!$user) {
-//            return response(['message' => 'Invalid token.'], 422);
-//        }
-//        $user->markEmailAsVerified();
-//        return response(['message' => 'Email successfully verified.']);
-//    }
 
 
 }
