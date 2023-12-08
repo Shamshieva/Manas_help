@@ -7,19 +7,8 @@ use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
 
-use App\Http\Controllers\Admin\VerificationController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/register', [AuthController::class, 'registrationForm'])->name('auth.registration');
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
@@ -42,6 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
         Route::patch('/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
 
+        Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.category.show');
         Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.category.show') ;
         Route::post('/store/video/{category}', [CategoryController::class, 'storeVideo'])->name('admin.category.store.video');
     });
@@ -57,19 +47,8 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::patch('/{subcategory}', [SubcategoryController::class, 'update'])->name('admin.subcategory.update');
 
 
-        Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show') ;
+        Route::get('/{subcategory}', [SubcategoryController::class, 'show'])->name('admin.subcategory.show');
         Route::post('/store/video/{subcategory}', [SubcategoryController::class, 'storeVideo'])->name('admin.subcategory.store.video');
 
     });
-
-
-    Route::group(['prefix' => 'video'], function () {
-        Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
-
-        Route::post('/', [VideoController::class, 'storeVideo'])->name('admin.video.store') ;
-
-    });
-
 });
-
-Route::get('/email', [VerificationController::class, 'sendVerificationEmail']);
