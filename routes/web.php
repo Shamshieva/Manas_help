@@ -15,12 +15,17 @@ Route::post('/register', [AuthController::class, 'register'])->name('auth.regist
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login',  [AuthController::class, 'login'])->name('auth.login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
 
 Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
     Route::get('/', [IndexController::class, 'index'])->name('admin.index');
 
-    Route::get('/profile', [ProfileController::class, 'show'])->name('admin.profile.show');
-    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', [ProfileController::class, 'show'])->name('admin.profile.show');
+        Route::patch('/{user}', [ProfileController::class, 'update'])->name('admin.profile.update');
+        Route::get('/{user}/edit', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    });
 
     Route::group(['prefix' => 'category'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('admin.category.index');
