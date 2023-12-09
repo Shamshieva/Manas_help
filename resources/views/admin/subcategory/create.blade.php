@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layouts.admin')
 @section('content')
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
     <script>    tinymce.init({
@@ -57,7 +57,7 @@
                                 <label class="custom-file-label" for="logo">logo</label>
                             </div>
                             @error('logo')
-                                <p class="text-danger">{{$message}}</p>
+                            <p class="text-danger">{{$message}}</p>
                             @enderror
                         </div>
                         <div class="form-row">

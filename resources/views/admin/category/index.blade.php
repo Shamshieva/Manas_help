@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layouts.admin')
 @section('content')
     <div class="row">
         <div class="col-sm-12">
@@ -54,7 +54,8 @@
                                                 </i>
                                             </a>
 
-                                            <a href="{{ route('admin.category.edit', $category->id) }}" class="svg-icon small-icon">
+                                            <a href="{{ route('admin.category.edit', $category->id) }}"
+                                               class="svg-icon small-icon">
                                                 <i class="">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                          viewBox="0 0 24 24" stroke-width="1.5" stroke="green"
