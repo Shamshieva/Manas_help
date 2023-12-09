@@ -50,6 +50,7 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index')->with(['notification'=> $result['notification']]);
     }
     public function show(Category $category){
+
         return view('admin.category.show', compact('category'));
     }
     public function storeVideo(StoreVideoRequest $request, Category $category)

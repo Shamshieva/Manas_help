@@ -7,8 +7,8 @@ use App\Http\Controllers\Admin\SearchController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
-
 use Illuminate\Support\Facades\Route;
+// в файле routes/web.php
 
 
 Route::get('/register', [AuthController::class, 'registrationForm'])->name('auth.registration');
@@ -59,4 +59,9 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
     });
 
 
+    Route::group(['prefix' => 'video'], function () {
+        Route::get('/', [VideoController::class, 'index'])->name('admin.video.index');
+        Route::post('/', [VideoController::class, 'storeVideo'])->name('admin.video.store') ;
+
+    });
 });
