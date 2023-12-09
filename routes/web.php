@@ -6,8 +6,8 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
-
 use Illuminate\Support\Facades\Route;
+// в файле routes/web.php
 
 
 Route::get('/register', [AuthController::class, 'registrationForm'])->name('auth.registration');
@@ -51,7 +51,6 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::post('/store/video/{subcategory}', [SubcategoryController::class, 'storeVideo'])->name('admin.subcategory.store.video');
 
     });
-
 
 
     Route::group(['prefix' => 'video'], function () {
