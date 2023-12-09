@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layouts.admin')
 @section('content')
     <div class="container">
         <h1>Subcategories</h1>
@@ -22,16 +22,16 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $subcategory->title_ky }}</h5>
                                 <p class="card-text">{{ Illuminate\Support\Str::limit($subcategory->description_ky, 100) }}</p>
-                                <a href="{{ route('admin.subcategory.show', $subcategory->id) }}" class="btn btn-primary">Read More</a>
+                                <a href="{{ route('admin.subcategory.show', $subcategory->id) }}"
+                                   class="btn btn-primary">Read More</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
 
-         {{ $subcategories->links() }}  {{--  Assuming you want to paginate the results--}}
+            {{ $subcategories->links() }}  {{--  Assuming you want to paginate the results--}}
         @endif
     </div>
-
 
 @endsection
