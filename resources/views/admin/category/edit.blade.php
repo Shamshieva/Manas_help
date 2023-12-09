@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layouts.admin')
 @section('content')
     <div class="row">
         <div class="col-sm-12 col-lg-12">
@@ -64,7 +64,7 @@
                         </div>
                         <div class="form-group mb-0">
                             <button class="btn btn-primary" type="submit">Update</button>
-                                <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Back</a>
                         </div>
                     </form>
                 </div>
