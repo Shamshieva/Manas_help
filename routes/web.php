@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\IndexController;
+use App\Http\Controllers\Admin\SearchController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SubcategoryController;
@@ -19,7 +20,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 
 Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
-    Route::get('/', [IndexController::class, 'index'])->name('admin.index');
+    Route::get('/', [SearchController::class, 'search'])->name('admin.index');
 
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', [ProfileController::class, 'show'])->name('admin.profile.show');
@@ -56,4 +57,6 @@ Route::group(['prefix' => 'admin', 'middleware' =>'admin'], function () {
         Route::post('/store/video/{subcategory}', [SubcategoryController::class, 'storeVideo'])->name('admin.subcategory.store.video');
 
     });
+
+
 });

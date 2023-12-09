@@ -40,13 +40,13 @@
                                 <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
                                     <ul class="navbar-nav text-uppercase">
                                         <li class="nav-item active">
-                                            <a class="nav-link tm-nav-link" href="#" style="color: blue;">Videos <span class="sr-only">(current)</span></a>
+                                            <a class="nav-link tm-nav-link" href="#" style="color: #2b65d6;">Specialists <span class="sr-only">(current)</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link tm-nav-link" href="about.html" style="color: blue;">About</a>
+                                            <a class="nav-link tm-nav-link" href="about.html" style="color: #2b65d6;">About</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link tm-nav-link" href="contact.html" style="color: blue;">Contact</a>
+                                            <a class="nav-link tm-nav-link" href="contact.html" style="color: #2b65d6;">Contact</a>
                                         </li>
                                     </ul>
                                 </div>
