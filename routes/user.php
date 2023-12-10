@@ -12,6 +12,7 @@ Route::group(
 function (){
     Route::group(['prefix'=>'user' ], function (){
         Route::get('/', [HomeController::class, 'index'])->name('user.index');
+        Route::get('/{service}/show', [HomeController::class, 'show'])->name('user.show');
 
     });
 

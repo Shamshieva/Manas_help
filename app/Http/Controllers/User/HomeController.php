@@ -14,4 +14,9 @@ class HomeController extends Controller
         $categories = Category::all();
         return view('user.new_index', compact('subcategories', 'categories'));
     }
+
+    public function show()
+    {
+        return view('user.show');
+    }
 }
