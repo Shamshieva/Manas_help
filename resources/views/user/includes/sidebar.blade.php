@@ -4,7 +4,32 @@
     id="drawer-navigation"
 >
     <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
-        <ul class="space-y-2">
+        <div class="md:hidden mb-2">
+            <ul class="space-y-2">
+                <li>
+                    <a
+                        href="#"
+                        class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    >{{ __('main.home') }}</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    >{{ __('main.about') }}</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    >{{ __('main.contact') }}</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
             @foreach ($categories as $category)
             <li>
                 <button
@@ -196,29 +221,7 @@
                                     />
                                 </g>
                             </svg>
-                            English (US)
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#"
-                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-600"
-                        role="menuitem"
-                    >
-                        <div class="inline-flex items-center">
-                            <svg
-                                aria-hidden="true"
-                                class="h-3.5 w-3.5 rounded-full mr-2"
-                                xmlns="http://www.w3.org/2000/svg"
-                                id="flag-icon-css-de"
-                                viewBox="0 0 512 512"
-                            >
-                                <path fill="#ffce00" d="M0 341.3h512V512H0z" />
-                                <path d="M0 0h512v170.7H0z" />
-                                <path fill="#d00" d="M0 170.7h512v170.6H0z" />
-                            </svg>
-                            Deutsch
+                            Türkçe
                         </div>
                     </a>
                 </li>
@@ -242,65 +245,7 @@
                                     <path fill="#ce2b37" d="M341.3 0H512v512H341.3z" />
                                 </g>
                             </svg>
-                            Italiano
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#"
-                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600"
-                        role="menuitem"
-                    >
-                        <div class="inline-flex items-center">
-                            <svg
-                                aria-hidden="true"
-                                class="h-3.5 w-3.5 rounded-full mr-2"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                id="flag-icon-css-cn"
-                                viewBox="0 0 512 512"
-                            >
-                                <defs>
-                                    <path
-                                        id="a"
-                                        fill="#ffde00"
-                                        d="M1-.3L-.7.8 0-1 .6.8-1-.3z"
-                                    />
-                                </defs>
-                                <path fill="#de2910" d="M0 0h512v512H0z" />
-                                <use
-                                    width="30"
-                                    height="20"
-                                    transform="matrix(76.8 0 0 76.8 128 128)"
-                                    xlink:href="#a"
-                                />
-                                <use
-                                    width="30"
-                                    height="20"
-                                    transform="rotate(-121 142.6 -47) scale(25.5827)"
-                                    xlink:href="#a"
-                                />
-                                <use
-                                    width="30"
-                                    height="20"
-                                    transform="rotate(-98.1 198 -82) scale(25.6)"
-                                    xlink:href="#a"
-                                />
-                                <use
-                                    width="30"
-                                    height="20"
-                                    transform="rotate(-74 272.4 -114) scale(25.6137)"
-                                    xlink:href="#a"
-                                />
-                                <use
-                                    width="30"
-                                    height="20"
-                                    transform="matrix(16 -19.968 19.968 16 256 230.4)"
-                                    xlink:href="#a"
-                                />
-                            </svg>
-                            中文 (繁體)
+                            Кыргызча
                         </div>
                     </a>
                 </li>

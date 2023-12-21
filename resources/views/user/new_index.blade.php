@@ -8,7 +8,7 @@
                 @foreach ($subcategories as $subcategory)
                     <div class="mb-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow relative">
-                            <img class="h-56 w-full object-cover object-center" src="{{ $subcategory->logo }}" alt="">
+                            <img class="h-56 w-full object-cover object-center" src="{{ asset($subcategory->logo) }}" alt="">
                             <div class="p-4 h-auto md:h-40 lg:h-48">
                                 <a href="#" class="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
                                     {{ $subcategory->title_ky }}
