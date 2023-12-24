@@ -95,16 +95,73 @@
             <div class="hidden md:block md:pl-2 ml-8">
                 <ul class="flex flex-col md:flex-row md:space-x-8">
                     <li>
-                        <a href="{{ route('user.index') }}" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">{{__('main.home')}}</a>
+                        <a href="{{ route('user.index') }}" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" >{{__('main.home')}}</a>
                     </li>
                     <li>
-                        <a href="{{ route('user.about') }}" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{{ __('main.about') }}</a>
+                        <a href="{{ route('user.about') }}" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">{{ __('main.about') }}</a>
                     </li>
                     <li>
                         <a href="{{ route('user.contact') }}" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{{ __('main.contact') }}</a>
                     </li>
+{{--                    <button onclick="setLang('ky')" type="button" class=" block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:text-red-300">KY</button>--}}
+{{--                    <button onclick="setLang('tr')" type="button" class=" block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">TR</button>--}}
+
+
+
+                    <button id="kyButton" onclick="setLang('ky')" type="button" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">KY</button>
+                    <button id="trButton" onclick="setLang('tr')" type="button" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">TR</button>
+
+
                 </ul>
             </div>
         </div>
     </div>
 </nav>
+
+
+<script>
+    let host = location.href;
+    host = host.split('/');
+    if(host.includes('tr'))
+    {
+        document.getElementById('trButton').className = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:text-red-300';
+        document.getElementById('kyButton').className = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
+    }
+    else{
+        document.getElementById('trButton').className = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
+        document.getElementById('kyButton').className = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:text-red-300';
+    }
+
+    function setLang(lang) {
+        if (getCurrentLang() === lang) {
+            return;
+        }
+
+        let current_location = location.href;
+        let arr_s = current_location.split('/');
+        arr_s[2] = arr_s[0] + '//' + arr_s[2] + '/' + lang;
+        let url = '';
+        for (let i = 2; i < arr_s.length; i++) {
+            if (arr_s[i] === 'ky' || arr_s[i] === 'tr' || arr_s[i] === '') {
+                continue;
+            }
+            url += arr_s[i] + "/";
+        }
+
+        location.href = url;
+    }
+    function getCurrentLang() {
+        let current_location = location.href;
+        let arr_s = current_location.split('/');
+        for (let i = 2; i < arr_s.length; i++) {
+            if (arr_s[i] === 'ky' || arr_s[i] === 'tr' || arr_s[i] === '') {
+                return arr_s[i];
+            }
+        }
+        return '';
+    }
+
+</script>
+
+
+

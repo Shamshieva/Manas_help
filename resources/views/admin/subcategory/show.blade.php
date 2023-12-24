@@ -95,54 +95,11 @@
                                                     <div class="card-body">
                                                         <h4 class="card-title">{{$video->title_ky}}</h4>
                                                         <p class="card-text">{{$video->description_ky}} </p>
-                                                        <a href="#" class="btn btn-primary">Button</a>
+                                                        <a href="{{asset($video->video_path_ky)}}" class="btn btn-primary">Button</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         @endforeach
-
-
                                 </div>
-                                </p>
-
                     </div>
-
-
-                    <div class="header-action">
-                        <i data-toggle="collapse" data-target="#breadcrumb-1">
-                            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                 viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                            </svg>
-                        </i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="row">
-            @foreach($subcategory->videos as $video)
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card">
-                        <video class="card-img-top" controls>
-                            <source src="{{asset($video->video_path_ky)}}">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <h4 class="card-title">{{$video->title_ky}}</h4>
-                            <p class="card-text">{{$video->description_ky}} </p>
-                            <a href="#" class="btn btn-primary">Button</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
-
-    </div>
-
 @endsection
