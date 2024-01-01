@@ -33,13 +33,13 @@
                                                     @csrf
                                                     <div class="form-group">
                                                         <label for="title_ky">Title KG</label>
-                                                        <input name="title_ky" id="title_ky" class="form-control">
+                                                        <input value ="{{old('title_ky')}}" name="title_ky" id="title_ky" class="form-control">
                                                         @error('title_ky')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
                                                         <div class="form-floating mb-3">
                                                             <label for="description_ky">description_ky</label>
-                                                            <textarea class="form-control" placeholder="description_ky" id="description_ky" name="description_ky"></textarea>
+                                                            <textarea class="form-control" placeholder="description_ky" id="description_ky" name="description_ky">{{ old('description_ky') }}</textarea>
                                                         </div>
                                                         @error('description_ky')
                                                         <p class="text-danger">{{$message}}</p>
@@ -47,7 +47,7 @@
                                                     </div>
                                                     <p>Custom Kg file:</p>
                                                     <div class="custom-file mb-3">
-                                                        <input type="file" class="custom-file-input" id="customFile" name="video_ky">
+                                                        <input value="{{ old('video_ky') }}" type="file" class="custom-file-input" id="customFile" name="video_ky">
                                                         <label class="custom-file-label" for="customFile">Файл тандаңыз </label>
                                                         @error('video_ky')
                                                         <p class="text-danger">{{$message}}</p>
@@ -55,20 +55,20 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="title_tr">Title TR</label>
-                                                        <input name="title_tr" id="title_tr" class="form-control">
+                                                        <input value ="{{old('title_tr')}}" name="title_tr" id="title_tr" class="form-control">
                                                         @error('title_tr')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
                                                         <div class="form-floating mb-3">
                                                             <label for="description_tr">Description_tr</label>
-                                                            <textarea class="form-control" id="description_tr" name="description_tr"></textarea>
+                                                            <textarea class="form-control" id="description_tr" name="description_tr">{{old('description_tr')}}</textarea>
                                                         </div>
                                                     </div>
                                                     @error('description_tr')
                                                     <p class="text-danger">{{$message}}</p>
                                                     @enderror
                                                     <div class="custom-file mb-3">
-                                                        <input type="file" class="custom-file-input" id="customFile" name="video_tr">
+                                                        <input value ="{{old('video_tr')}}" type="file" class="custom-file-input" id="customFile" name="video_tr">
                                                         <label class="custom-file-label" for="customFile">File Seçiniz </label>
                                                         @error('video_tr')
                                                         <p class="text-danger">{{$message}}</p>
