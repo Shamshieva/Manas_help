@@ -7,8 +7,7 @@ use App\Http\Services\Localization\LocalizationService;
 use Illuminate\Support\Facades\Route;
 
 Route::group(
-    [
-        'prefix' => LocalizationService::locale(),
+    ['prefix' => LocalizationService::locale(),
         'middleware' => 'setLocale'
     ],
 function (){

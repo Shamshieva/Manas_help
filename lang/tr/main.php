@@ -4,6 +4,6 @@ return [
     'main' => 'Bashlik',
     'home' => 'Anasayfa',
     'about'=>'Biz hakkımızda',
-    'contact'=>'iletişim',
+    'contact'=>'Iletişim',
     'search'=>'Aramak',
 ];
