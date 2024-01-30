@@ -5,18 +5,18 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
+                        <div class="card-header d-flex justify-content-between">
                         <h4 class="card-title">{{$subcategory->title_ky}}</h4>
-                        <h4 class="card-title">{{$subcategory->title_tr}}</h4>
-                        <h4 class="card-title">{{$subcategory->id}}</h4>
-
-                                <button type="button" class="btn btn-primary mt-2 mr-2" data-toggle="modal" data-target=".bd-example-modal-xl">Add</button>
-                                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"   aria-hidden="true">
+                         <h4 class="card-title">{{$subcategory->title_tr}}</h4>
+                           <h4 class="card-title">{{$subcategory->id}}</h4>
+                                <button type="button" class="btn btn-primary mt-3 mr-3 " data-toggle="modal" data-target=".bd-example-modal-xl">Add</button></div>
+                                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"  aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Modal title</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                                                    <span aria-hidden="true"></span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
@@ -92,10 +92,10 @@
                                                         <source src="{{asset($video->video_path_ky)}}">
                                                         Your browser does not support the video tag.
                                                     </video>
-                                                    <div class="card-body">
+                                                    <div class="card-body ">
                                                         <h4 class="card-title">{{$video->title_ky}}</h4>
                                                         <p class="card-text">{{$video->description_ky}} </p>
-                                                        <a href="{{asset($video->video_path_ky)}}" class="btn btn-primary">Button</a>
+                                                        <a href="{{asset($video->video_path_ky)}}" class="btn btn-primary">Watch</a>
                                                     </div>
                                                 </div>
                                             </div>

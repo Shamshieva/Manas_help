@@ -8,8 +8,8 @@
                     <div class="header-title">
                         <h4 class="card-title">Subcategories</h4>
                     </div>
-                    <div class="header-action">
-                        <a href="{{ route('admin.subcategory.create') }}" class="btn btn-primary">Add</a>
+                    <div class="header-action mb-3">
+                        <a href="{{ route('admin.subcategory.create') }}" class="btn btn-primary mb-3">Add</a>
                         <i data-toggle="collapse" data-target="#datatable-1" aria-expanded="false">
                             <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
@@ -19,7 +19,7 @@
                         </i>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body ">
                     <div class="collapse" id="datatable-1">
                     </div>
                     <div class="table-responsive">
