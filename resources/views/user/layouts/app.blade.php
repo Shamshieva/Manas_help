@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -51,8 +54,7 @@
             }
         }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/8.9.0/video-js.css" rel="stylesheet" />
     @include('user.layouts.identification')
 </head>
 <body>
@@ -68,6 +70,6 @@
     </main>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
-
+<script src="https://vjs.zencdn.net/8.9.0/video.min.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+{{--show.blade.php--}}
 @extends('user.layouts.app')
 @section('content')
     <main class="py-4">

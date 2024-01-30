@@ -16,7 +16,8 @@ class IdentificationController extends Controller
             'device_name'=>'string|required',
             ]);
 
-        $hash = Hash::make($data['device_name'] . Carbon::now()) . Hash::make(Hash::make($data['device_name'].Carbon::now() . round(1000000000, 9999999999)));
+//        $hash = Hash::make($data['device_name'] . Carbon::now()) . Hash::make(Hash::make($data['device_name'].Carbon::now() . round(1000000000, 9999999999)));
+        $hash = Hash::make($data['device_name'] . Carbon::now());
         User::create([
             'name' => $data['device_name'],
             'device_name' => $data['device_name'],
@@ -26,4 +27,6 @@ class IdentificationController extends Controller
         ]);
         return response(['token' => $hash]);
     }
+
+
 }

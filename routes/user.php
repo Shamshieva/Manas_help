@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\IdentificationController;
+use App\Http\Controllers\User\VideoController;
 use App\Http\Services\Localization\LocalizationService;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,13 @@ function (){
 
         Route::get('/{subcategory}/show', [HomeController::class, 'show'])->name('user.show');
         Route::get('/{video}/display', [HomeController::class, 'displayVideo'])->name('user.display');
+        Route::get('/{video}/show/video', [VideoController::class, 'show'])->name('video.show');
+
 
         Route::post('/identification', [IdentificationController::class, 'identification'])->name('user.identification');
+
+        Route::post('/startWatch', [VideoController::class, 'startWatch'])->name('user.startWatch');
+
     });
 
 });
