@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('video_id');
-            $table->string('time');
+            $table->string('time')->nullable();
             $table->timestamps();
 
             $table->index('user_id', 'view_user_idx');

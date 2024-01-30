@@ -8,7 +8,6 @@ use App\Http\Requests\Admin\Category\UpdateRequest;
 use App\Http\Requests\Admin\Subcategory\StoreVideoRequest;
 use App\Http\Services\Admin\CategoryService;
 use App\Models\Category;
-use App\Models\Subcategory;
 
 class CategoryController extends Controller
 {

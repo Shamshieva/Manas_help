@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\IndexController;
-use App\Http\Controllers\Admin\SearchController;
-use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\SearchController;
 use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Services\Localization\LocalizationService;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+
 // в файле routes/web.php
 
 Route::group(

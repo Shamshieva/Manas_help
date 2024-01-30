@@ -1,4 +1,4 @@
-
+{{--identification.blade.php--}}
 <script>
 
     let token = localStorage.getItem('manas_help_users_token')
