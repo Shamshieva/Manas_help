@@ -16,7 +16,7 @@ function (){
         Route::get('/about', [HomeController::class, 'about'])->name('user.about');
         Route::get('/contact', [HomeController::class, 'contact'])->name('user.contact');
 
-        Route::get('/{subcategory}/show', [HomeController::class, 'show'])->name('user.show');
+        Route::get('/{category}/show', [HomeController::class, 'show'])->name('user.show');
         Route::get('/{video}/display', [HomeController::class, 'displayVideo'])->name('user.display');
         Route::get('/{video}/show/video', [VideoController::class, 'show'])->name('video.show');
 

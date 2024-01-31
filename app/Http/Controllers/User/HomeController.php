@@ -16,12 +16,12 @@ class HomeController extends Controller
         return view('user.index', compact('subcategories', 'categories'));
     }
 
-    public function show(Subcategory $subcategory)
+    public function show(Category $category)
     {
-        $subcategories = Subcategory::all();
-        $categories = Category::all();
-        return view('user.show', compact('categories', 'subcategories', 'subcategory'));
+        $subcategories = $category->subcategories;
+        return view('user.show', compact('category','subcategories'));
     }
+
 
     public function displayVideo(Video $video)
     {
