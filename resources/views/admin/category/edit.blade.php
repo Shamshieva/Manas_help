@@ -42,18 +42,6 @@
                                        value="{{ $category->title_tr }}">
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label for="description_ky">Description_ky</label>
-                                <textarea id="description_ky"
-                                          name="description_ky"> {{ $category->description_ky }}</textarea>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="description_tr">Description_tr</label>
-                                <textarea id="description_tr" name="description_tr">{{ strip_tags($category->description_tr) }}</textarea>
-                            </div>
-                        </div>
-
                         <div class="col-md-6 mb-3">
                             <div class="mb-4 mt-4">
                                 <img style="width: 250px; height: 250px;" src="{{asset($category->logo)}}">

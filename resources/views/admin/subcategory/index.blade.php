@@ -10,13 +10,6 @@
                     </div>
                     <div class="header-action mb-3">
                         <a href="{{ route('admin.subcategory.create') }}" class="btn btn-primary mb-3">Add</a>
-                        <i data-toggle="collapse" data-target="#datatable-1" aria-expanded="false">
-                            <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                            </svg>
-                        </i>
                     </div>
                 </div>
                 <div class="card-body ">

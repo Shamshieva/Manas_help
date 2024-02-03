@@ -41,17 +41,6 @@
                                 <input type="text" class="form-control" id="title_tr" name="title_tr" required="">
                             </div>
                         </div>
-                        <div class="form-row">
-
-                            <div class="col-md-6 mb-3">
-                                <label for="description_ky">Description_ky</label>
-                                <textarea id="description_ky" name="description_ky"></textarea>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="description_tr">Description_tr</label>
-                                <textarea id="description_tr" name="description_tr"></textarea>
-                            </div>
-                        </div>
                         <div class="col-md-6 mb-3">
                             <div class="custom-file mb-3">
                                 <input type="file" class="custom-file-input" id="logo" name="logo">

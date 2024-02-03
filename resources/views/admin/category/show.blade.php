@@ -6,7 +6,6 @@
             <img style="height: 100px; width: auto" src="{{ asset($category->logo) }}" alt="Category Logo" class="logo-img mr-3">
             <div>
                 <h1 class="display-4">{{ $category->title_ky }}</h1>
-                <p class="lead"> {{ strip_tags($category->description_ky) }}</p>
             </div>
         </div>
     </div>

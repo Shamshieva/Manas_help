@@ -45,7 +45,6 @@
                             </div>
                         </div>
                         <div class="form-row">
-
                             <div class="col-md-6 mb-3">
                                 <label for="description_ky">Description_ky</label>
                                 <textarea id="description_ky" name="description_ky">
@@ -62,7 +61,7 @@
                         <div class="col-md-6 mb-3">
                             <div class="custom-file mb-3">
                                 <input type="file" class="custom-file-input" id="logo" name="logo"
-                                       value="{{ $subcategory->logo }}">
+                                       value="{{$subcategory->logo }}">
                                 <label class="custom-file-label" for="logo">logo</label>
                             </div>
                             @error('logo')
@@ -80,7 +79,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-0">
-                            <button class="btn btn-primary" type="submit">Create</button>
+                            <button class="btn btn-primary" type="submit">Update</button>
                             <a href="{{ route('admin.subcategory.index') }}" class="btn btn-primary">Cancel</a>
                         </div>
                     </form>
