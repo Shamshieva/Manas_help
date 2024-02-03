@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title"> Default Validation</h4>
+                        <h4 class="card-title">Category Edit</h4>
                     </div>
                     <div class="header-action">
                         <i data-toggle="collapse" data-target="#form-validation-1" aria-expanded="false">
