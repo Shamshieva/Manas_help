@@ -22,6 +22,7 @@
                             </svg>
                         </i>
                     </div>
+
                 </div>
                 <div class="card-body">
                     <div class="collapse" id="form-validation-1">

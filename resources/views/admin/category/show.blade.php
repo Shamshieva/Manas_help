@@ -4,7 +4,7 @@
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <div class="d-flex align-items-center">
             <img style="height: 100px; width: auto" src="{{ asset($category->logo) }}" alt="Category Logo" class="logo-img mr-3">
-            <div>
+            <div class="d-flex justify-content-between">
                 <h1 class="display-4">{{ $category->title_ky }}</h1>
                 <p class="lead"> {{ strip_tags($category->description_ky) }}</p>
             </div>

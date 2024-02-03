@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('logo');
             $table->longText('description_ky')->nullable();
             $table->longText('description_tr')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
