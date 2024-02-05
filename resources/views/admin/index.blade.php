@@ -14,7 +14,6 @@
     @if($subcategories->isEmpty())
         <p>No posts found.</p>
     @else
-
         <div class="container-fluid">
             <div class="row">
                 @foreach ($subcategories as $subcategory)
