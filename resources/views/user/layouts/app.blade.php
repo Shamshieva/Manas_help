@@ -29,7 +29,7 @@
                         <a class="nav-link" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categories</a>
+                        <a class="nav-link" href="{{ route('category.index') }}">Categories</a>
                     </li>
                     @auth()
                         <li class="nav-item">

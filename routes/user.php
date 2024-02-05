@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\CategoryController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\IdentificationController;
 use App\Http\Controllers\User\VideoController;
@@ -26,6 +27,16 @@ function (){
         Route::post('/startWatch', [VideoController::class, 'startWatch'])->name('user.startWatch');
 
     });
+
+    Route::group(['prefix' => 'categories'], function (){
+        Route::get('/', [CategoryController::class, 'index'])->name('category.index');
+
+
+        Route::group(['prefix' => '{category}/subcategories'], function (){
+            Route::get('/', [CategoryController::class, 'posts'])->name('category.subcategories.index');
+        });
+    });
+
 
 });
 
