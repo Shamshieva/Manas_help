@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
-    <h1>Subcategories</h1>
+    <h1>Services</h1>
 
     <form action="{{ route('admin.index') }}" method="GET">
         <div class="input-group mb-3">

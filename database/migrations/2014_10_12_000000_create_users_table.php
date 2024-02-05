@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
-            $table->unsignedSmallInteger('role')->default(1);
+            $table->unsignedSmallInteger('role')->default(0);
             $table->boolean('is_registered')->nullable();
             $table->text('token')->nullable();
             $table->string('device_name')->nullable();
