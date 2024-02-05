@@ -20,8 +20,9 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
 
-    const ADMIN = 0;
-    const USER = 1;
+
+    const USER = 0;
+    const ADMIN = 1;
 
     public static function getRoles()
     {
@@ -53,7 +54,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'role',
         'is_registered',
         'token',
-        'device_name'
+        'device_name',
     ];
 
     /**
