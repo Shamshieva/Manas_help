@@ -19,3 +19,5 @@ yarn-error.log
 /.vscode
 /public/logos/*
 /public/videos/*
+/public/admin_files/*
+/public/user_files/*
